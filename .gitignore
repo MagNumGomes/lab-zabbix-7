@@ -1,0 +1,5 @@
+.env
+*.log
+downloads/
+credentials.local.json
+validation.local.json
