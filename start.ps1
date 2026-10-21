@@ -8,5 +8,5 @@ try {
     & powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$PSScriptRoot/healthcheck.ps1"
     if ($LASTEXITCODE -ne 0) { throw 'Healthcheck falhou.' }
     Write-Host 'Acesse http://localhost:8080 - usuario Admin / senha zabbix'
-    Write-Host 'Para provisionar hosts, proxies e praticas do curso: .\complete-lab.ps1'
+    Write-Host 'Para provisionar hosts, proxies e configurações do laboratório: .\complete-lab.ps1'
 } finally { Pop-Location }

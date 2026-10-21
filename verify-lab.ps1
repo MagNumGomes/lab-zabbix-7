@@ -101,7 +101,7 @@ mysql -u "$MYSQL_USER" -D "$MYSQL_DATABASE" -Nse "SELECT COUNT(*) FROM mfa_totp_
         if($username -eq 'lab.admin'){
             $editable=@(Invoke-ZabbixApi 'host.get' @{output=@('host');editable=$true})
             $editableNames=@($editable|ForEach-Object{$_.host})
-            Assert-Lab ($editableNames -contains 'windows-host' -and $editableNames -contains 'mysql-lab' -and $editableNames -notcontains 'Zabbix server') 'Admin gerencia grupos do curso, sem acesso administrativo ao host de infraestrutura'
+            Assert-Lab ($editableNames -contains 'windows-host' -and $editableNames -contains 'mysql-lab' -and $editableNames -notcontains 'Zabbix server') 'Admin gerencia grupos do laboratório, sem acesso administrativo ao host de infraestrutura'
         }
         if($username -eq 'lab.super'){Assert-Lab ($names -contains 'Zabbix server') 'Super admin acessa infraestrutura'}
         if($username -eq 'lab.noc'){
